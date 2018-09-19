@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Test.Models.Task
+<h2>Удаление задачи</h2>
+<dl>
+    <dt>Задача</dt>
+    <dd>
+        @Html.DisplayFor(model => model.TaskName)
+    </dd>
+
+    <dt>Выполнена</dt>
+    <dd>
+        @Html.DisplayFor(model => model.TaskDone)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

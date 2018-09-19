@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Редактировать задачу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Test.Models.Task
+<h2>Задача № @Model.Id</h2>
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.TaskName, "Задача")
+            <br />
+            @Html.EditorFor(m => m.TaskName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.TaskDone, "Выполнена")
+            <br />
+            @Html.EditorFor(m => m.TaskDone)
+
+        </p>
+        <p><input type="submit" value="Отправить" /></p>
+    </fieldset>
+}
